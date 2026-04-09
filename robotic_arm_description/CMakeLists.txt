@@ -8,10 +8,13 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 
-install(
-  DIRECTORY launch meshes urdf 
+install(DIRECTORY
+  launch
+  meshes
+  urdf
+  rviz
   DESTINATION share/${PROJECT_NAME}
-)
+  )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
