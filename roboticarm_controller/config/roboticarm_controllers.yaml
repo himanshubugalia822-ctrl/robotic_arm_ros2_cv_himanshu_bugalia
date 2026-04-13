@@ -36,11 +36,11 @@ gripper_controller:
       - joint_4
     interface_name: position
       
-    # command_interfaces:
-    #   - position
+    command_interfaces:
+      - position
 
-    # state_interfaces:
-    #   - position
+    state_interfaces:
+      - position
 
-    # open_loop_control: true
-    # allow_integration_in_goal_trajectories: true
+    open_loop_control: true
+    allow_integration_in_goal_trajectories: true
