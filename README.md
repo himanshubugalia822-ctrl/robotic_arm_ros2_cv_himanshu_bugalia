@@ -74,6 +74,20 @@ https://github.com/user-attachments/assets/66b2b837-64e9-4d77-9a32-0c9a154dee75
 
 ---
 
+## 🏗️ System Architecture
+
+This project follows a modular ROS 2 architecture where motion planning, control, and simulation are decoupled:
+
+MoveIt 2 generates collision-aware trajectories based on inverse kinematics.
+
+These trajectories are sent to ros2_control controllers, which convert them into joint-level commands.
+
+Gazebo simulates the physical behavior of the robotic arm, executing the planned motion in real-time.
+
+TF2 ensures correct spatial transformations between all robot links, enabling accurate planning and execution.
+
+👉 This architecture represents a Digital Twin pipeline commonly used in industrial robotic systems.
+
 ## 🛠️ Tech Stack
 | Category | Tools |
 |---|---|
