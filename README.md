@@ -1,11 +1,11 @@
-<h1 align="center">🤖 Smart 4-DOF Robotic Arm ROS2 Pipeline</h1>
+<h1 align="center">🤖 ROS2-Based 3-DOF Robotic Arm with Gripper| MoveIt2 + Gazebo Digital Twin Pipeline</h1>
 
 <p align="center">
   ROS2 Humble • MoveIt2 • Gazebo • TF2 • URDF/Xacro • OpenCV • ros2_control
 </p>
 
 <p align="center">
-  A simulation-first robotic arm project featuring motion planning, TF tree validation, gripper actuation, and future vision-based pick & place integration.
+ A ROS2-based robotic manipulation system implementing motion planning, control, and simulation using MoveIt2, ros2_control, and Gazebo.This project demonstrates a complete digital twin pipeline where planned trajectories in MoveIt are executed in real-time on a simulated robotic arm in Gazebo.
 </p>
 
 ---
@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/fcd272e6-22be-42c3-95cd-de1ab4f5a574
 
 
 
-
+🚀 Demonstrates a complete planning-to-execution pipeline used in real-world robotic systems
 ### 🤏 Gripper Motion Demo
 
 
@@ -61,7 +61,7 @@ https://github.com/user-attachments/assets/66b2b837-64e9-4d77-9a32-0c9a154dee75
 ---
 
 ## ✨ Key Features
-- ✅ 4-DOF robotic arm URDF/Xacro modeling
+- ✅ 3-DOF robotic arm with gripper URDF/Xacro modeling
 - ✅ RViz2 joint GUI verification
 - ✅ MoveIt2 inverse kinematics + planning
 - ✅ Interactive marker based end-effector control
@@ -76,17 +76,14 @@ https://github.com/user-attachments/assets/66b2b837-64e9-4d77-9a32-0c9a154dee75
 
 ## 🏗️ System Architecture
 
-This project follows a modular ROS 2 architecture where motion planning, control, and simulation are decoupled:
+This project follows a modular ROS 2 pipeline:
 
-MoveIt 2 generates collision-aware trajectories based on inverse kinematics.
+1. **MoveIt 2** → Generates collision-aware trajectories using inverse kinematics  
+2. **ros2_control** → Converts trajectories into joint-level commands  
+3. **Gazebo** → Executes motion with physics simulation  
+4. **TF2** → Maintains correct coordinate transformations  
 
-These trajectories are sent to ros2_control controllers, which convert them into joint-level commands.
-
-Gazebo simulates the physical behavior of the robotic arm, executing the planned motion in real-time.
-
-TF2 ensures correct spatial transformations between all robot links, enabling accurate planning and execution.
-
-👉 This architecture represents a Digital Twin pipeline commonly used in industrial robotic systems.
+👉 Represents a Digital Twin pipeline used in industrial robotic systems
 
 ## 🛠️ Tech Stack
 | Category | Tools |
