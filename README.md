@@ -93,18 +93,18 @@ https://github.com/user-attachments/assets/19e05b8b-1f19-4ccd-9fd3-48055bf2a728
 robotic_arm_ros2_cv_himanshu_bugalia/
 ├── robotic_arm_description/
 │   ├── assets/
-│   ├── config/
+│   ├── include/
 │   ├── launch/
 │   ├── meshes/
 │   ├── rviz/
 │   ├── urdf/
-│   └── worlds/
+│   └── src/
 │
 ├── robotic_arm_moveit/
 │   ├── config/
+│   ├── include/
 │   ├── launch/
-│   ├── srdf/
-│   └── rviz/
+│   └── src/
 │
 ├── roboticarm_controller/
 │   ├── src/
@@ -120,6 +120,28 @@ robotic_arm_ros2_cv_himanshu_bugalia/
 - **robotic_arm_moveit** → MoveIt2 motion planning and execution pipeline
 - **roboticarm_controller** → ROS2 controllers, trajectory execution, gripper control
 ---
+
+## ⚙️ How to Run
+```bash
+cd ~/robotic_arm_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+### Launch robot description
+```bash
+ros2 launch robotic_arm_description display.launch.py
+```
+
+### Launch MoveIt2
+```bash
+ros2 launch robotic_arm_moveit demo.launch.py
+```
+
+### Launch controller + Gazebo
+```bash
+ros2 launch roboticarm_controller gazebo_control.launch.py
+```
 
 ## ⚙️ Workflow
 1. Model robotic arm in **URDF/Xacro**
